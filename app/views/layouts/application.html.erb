@@ -14,14 +14,20 @@
   <body>
     <header class="header">
       <div class="inner">
-        <div class="login">ユーザーログイン</div>
-        <div class="resistration">新規登録</div>
-        <div class="contents">Contents</div>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+          <%= link_to "My Page", "#"%>
+          <%= link_to "Contents", "#"%>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path%>
+          <%= link_to "新規登録", new_user_registration_path%>
+        <% end %>
+
       </div>
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">Copyright © Runners High All rights reserved.</p>
     </footer>
   </body>
 </html>

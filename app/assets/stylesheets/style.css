@@ -1,3 +1,8 @@
+.body {
+  min-height: 100vh;
+  position: relative;
+}
+
 .header {
   background-color: black;
   width: 100%;
@@ -10,6 +15,7 @@
   color: white;
 }
 
+ /* メイン画面 */
 
 .main {
   height: 100vh;
@@ -25,7 +31,6 @@
   color: #ffffff;
 }
 
-
 .main-image{
   height: 100vh;
   width: 100vw;
@@ -40,8 +45,11 @@
 /* フッター */
 
 .footer {
-  background-color: #999;
+  background-color: black;
   padding: 10px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 .copyright {
   text-align: center;

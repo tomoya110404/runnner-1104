@@ -9,8 +9,6 @@ class User < ApplicationRecord
     validates :nickname
     validates :email
     validates :password
-    validates :height
-    validates :weight
   end  
 
 end
