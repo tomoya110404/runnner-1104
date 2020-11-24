@@ -49,10 +49,24 @@ ActiveRecord::Schema.define(version: 2020_11_24_084055) do
     t.text "comment", null: false
     t.bigint "user_id"
     t.bigint "article_id"
+    t.bigint "meal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["meal_id"], name: "index_comments_on_meal_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "kondate", null: false
+    t.text "recipe", null: false
+    t.text "recipe2"
+    t.text "recipe3"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,5 +87,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_084055) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
+  add_foreign_key "comments", "meals"
   add_foreign_key "comments", "users"
+  add_foreign_key "meals", "users"
 end

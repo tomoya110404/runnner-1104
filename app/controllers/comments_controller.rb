@@ -2,12 +2,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to article_path(@comment.article.id)
-    else
-      @article = @comment.article
-      render "articles/show"
-    end  
+    @comment.save
+    render json:{ comment: @comment, user: current_user }
   end
   
 
