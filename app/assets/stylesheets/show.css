@@ -1,0 +1,22 @@
+.show-layout {
+  font-size: 2rem;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.show-title {
+  display: flex;
+  justify-content: center;
+}
+
+.maybypulldown {
+
+}
+
+.Goodbtn {
+  display: flex;
+  justify-content: flex-end;
+}

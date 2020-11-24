@@ -1,0 +1,24 @@
+<div class="show-layout">
+  <div class="show-title">
+     <div class="show-title-content"><%= @article.title %></div>
+     <div class="maybypulldown">
+       <%= link_to "削除", "#" %>
+       <%= link_to "編集", "#" %>
+     </div>  
+  </div>
+  <%= image_tag(@article.image, class: "show-image") %>
+  <div class="Goodbtn">btn</div>
+  <div class="show-content">
+      <div class="category-zone"><%= @article.category.name %></div>
+      <div class="menu-form"><%= @article.menu %></div>
+      <div class="free-text"><%= @article.free_text %></div>
+      <div class="hapning"><%= @article.hapning %></div>
+      <div>aaa</div>
+      <div>aaa</div>
+      <div>aaaaaaaaaaaaaaaaaaaaa</div>
+  </div>
+  <div class="comment-zone">
+    ここにコメント機能打ち込む
+  </div>
+</div>
+
