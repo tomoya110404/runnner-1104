@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
-    @commnets = @article.comments.includes(:user)
+    @comments = @article.comments.includes(:user)
   end
 
   def edit

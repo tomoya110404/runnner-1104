@@ -22,9 +22,10 @@
   <div class="comment-zone">
     <h1>コメント一覧</h1>
     <%= form_with(model: [@article, @comment], local:true, id: "form", class: "form")  do |form| %>
-      <%= form.text_field :text,  id: "text", placeholder: "コメントする", class: "comment-text"%>
+      <%= form.text_field :comment,  id: "text", placeholder: "コメントする", class: "comment-text"%>
       <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "comment-btn" %>
     <% end %> 
+
     <ul class="talk",  id="list">
       <% if @comments %>
         <% @comments.each do |comment| %>
@@ -35,10 +36,10 @@
                 </div>
                 <div class="lower-messages">
                   <div class="lower-message-text">
-                    <p class="talk-text" ><%= comment.text %></p>
+                    <p class="talk-text" ><%= comment.comment %></p>
                   </div>  
                   <div class="lower-message-delete", id="pull-down">
-                    <%= link_to "削除する", item_comment_path(comment.id), method: :delete %>
+                    <%= link_to "削除する", "#", method: :delete %>
                   </div>  
                 </div>  
             </li>  
@@ -46,7 +47,7 @@
             <li class="talk-Ltxt">
               <div>
                 <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
-                <p class="talk-text"><%= comment.text %></p>
+                <p class="talk-text"><%= comment.comment %></p>
               </div>  
             </li>
           <% end %>  
