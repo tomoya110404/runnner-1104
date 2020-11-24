@@ -2,12 +2,12 @@
   <div class="show-title">
      <div class="show-title-content"><%= @article.title %></div>
      <div class="maybypulldown">
-       <%= link_to "削除", "#" %>
-       <%= link_to "編集", "#" %>
+       <%= link_to "削除", article_path(@article.id), method: :delete %>
+       <%= link_to "編集", edit_article_path %>
      </div>  
   </div>
   <%= image_tag(@article.image, class: "show-image") %>
-  <div class="Goodbtn">btn</div>
+  <div class="Goodbtn">btn</div> 
   <div class="show-content">
       <div class="category-zone"><%= @article.category.name %></div>
       <div class="menu-form"><%= @article.menu %></div>
@@ -17,8 +17,42 @@
       <div>aaa</div>
       <div>aaaaaaaaaaaaaaaaaaaaa</div>
   </div>
+
+
   <div class="comment-zone">
-    ここにコメント機能打ち込む
+    <h1>コメント一覧</h1>
+    <%= form_with(model: [@article, @comment], local:true, id: "form", class: "form")  do |form| %>
+      <%= form.text_field :text,  id: "text", placeholder: "コメントする", class: "comment-text"%>
+      <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "comment-btn" %>
+    <% end %> 
+    <ul class="talk",  id="list">
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <% if comment.user.id == current_user.id %>
+            <li class="talk-Rtxt", id="talk-hukidashi-left">
+                <div>
+                  <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
+                </div>
+                <div class="lower-messages">
+                  <div class="lower-message-text">
+                    <p class="talk-text" ><%= comment.text %></p>
+                  </div>  
+                  <div class="lower-message-delete", id="pull-down">
+                    <%= link_to "削除する", item_comment_path(comment.id), method: :delete %>
+                  </div>  
+                </div>  
+            </li>  
+          <% else %>  
+            <li class="talk-Ltxt">
+              <div>
+                <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
+                <p class="talk-text"><%= comment.text %></p>
+              </div>  
+            </li>
+          <% end %>  
+        <% end %>
+      <% end %>  
+    </ul>
   </div>
 </div>
 
