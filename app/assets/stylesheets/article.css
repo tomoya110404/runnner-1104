@@ -1,0 +1,13 @@
+.articles {
+  margin: 50px 30px;
+  height: 100vh;
+}
+
+.article-mi {
+  margin: 50px;
+}
+
+.article {
+  display: flex;
+  justify-content: space-around;
+}

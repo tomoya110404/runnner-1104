@@ -6,6 +6,12 @@ class CommentsController < ApplicationController
     render json:{ comment: @comment, user: current_user }
   end
   
+  def destroy
+    @article = Article.find(params[:id])
+    @comment = Comment.find(params[:article_id])
+    @comment.destroy
+    redirect_to article_path(@article.id)
+  end
 
   private
 
