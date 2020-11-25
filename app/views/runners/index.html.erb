@@ -1,6 +1,22 @@
 <main class="main">
-    <%= image_tag 'photo-1513593771513-7b58b6c4af38.jpeg', class: "main-image"%>
-    <h1>Runners High(仮)</h1>
-    
+  <%= image_tag 'photo-1513593771513-7b58b6c4af38.jpeg', class: "main-image"%>
+  <h1>Runners High(仮)</h1>
+  <div class="concept">
+    <div class="concept-title">コンセプト</div>
+    <div class="concept-introduction">
+     アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介
+    </div>
+  </div>  
+  <div class="favorites">
+    <div class="favorite-article">・Good Logs・</div>
+    <div class="favorite">
+      <%=render partial: "articles/article", collection: @articles  %>
+    </div>
+    <div class="favorite-meal">・Good Meals・</div>
+    <div class="meal-articles">
+      
+    </div>
+  </div>
+
      
 </main>

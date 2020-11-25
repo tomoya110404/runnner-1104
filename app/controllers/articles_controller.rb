@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-
+  before_action :article_find, only: [:show, :edit, :update, :destroy]
   def index
     @articles = Article.all
   end  
@@ -19,17 +19,15 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
   end
 
   def edit
-    @article = Article.find(params[:id])
+  
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to article_path
     else  
@@ -38,13 +36,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
 
 
   private
+
+  def article_find
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(:title, :menu, :hapning, :free_text, :category_id, :image).merge(user_id: current_user.id)
