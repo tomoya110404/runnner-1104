@@ -1,6 +1,4 @@
 .body {
-  min-height: 100vh;
-  position: relative;
 }
 
 .header {
@@ -11,25 +9,73 @@
 
 .inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   color: white;
 }
+
+.top-icon {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: fantasy;
+  margin-right: 600px;
+  margin-top: 2px;
+  font-size: 30px;
+}
+
+.logout {
+  margin-right: 30px;
+}
+
+.login {
+  margin-right: 10px;
+}
+
+.resistration {
+  margin-right: 30px;
+}
+
+.three-line {
+  margin-right: 10px;
+  color: gray
+}
+
+.hidden {
+  display: none;
+}
+
+.show-lists{
+  width: 150px;
+  height: 300px;
+  position: absolute;
+  right: 1px;
+  top: 40px;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.show-list {
+  margin: 20px 0 0 30px;
+}
+
 
  /* メイン画面 */
 
 .main {
   height: 100vh;
   width: 100%;
-  position: relative;
 }
 
 .main h1 {
   position: absolute;
-  top: 15%;
-  left: 5%;
-  font-size: 60px;
-  color: #ffffff;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 80px;
 }
 
 .main-image{
