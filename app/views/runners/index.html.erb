@@ -10,11 +10,12 @@
   <div class="favorites">
     <div class="favorite-article">・Good Logs・</div>
     <div class="favorite">
-      <%=render partial: "articles/article", collection: @articles  %>
+      <%= render partial: "articles/article", collection: @articles  %>
     </div>
+    
     <div class="favorite-meal">・Good Meals・</div>
-    <div class="meal-articles">
-      
+    <div class="favorite">
+      <%= render partial: "meals/meal", collection: @meals %>
     </div>
   </div>
 

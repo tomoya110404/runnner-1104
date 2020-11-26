@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <%= image_tag(meal.image, class: "card-img-top") %>
+  <div class="card-body">
+    <h5 class="card-title"><%= meal.name %></h5>
+    <p class="card-text"><%= meal.kondate %></p>
+    <%= link_to "記事を見る", meal_path(meal.id), class: "btn btn-primary" %>
+  </div>
+</div>
