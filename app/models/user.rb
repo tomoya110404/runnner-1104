@@ -10,8 +10,12 @@ class User < ApplicationRecord
     validates :email
     validates :password
   end  
+  
 
   has_many :articles
+  has_one_attached :image
+  has_many :favorite_counts, dependent: :destroy
+
   has_many :comments
   has_many :meals
   has_many :meals_comment

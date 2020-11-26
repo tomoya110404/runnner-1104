@@ -7,7 +7,9 @@
      </div>  
   </div>
   <%= image_tag(@article.image, class: "show-image") %>
-  <div class="Goodbtn">btn</div> 
+  <div class="Goodbtn">
+    <div class="favo_btn", id="f_btn", data-id=<%= @article.id %>, data-checked=<%= @article.checked %>><i class="far fa-heart"></i></div>
+  </div>
   <div class="show-content">
       <div class="category-zone"><%= @article.category.name %></div>
       <div class="menu-form"><%= @article.menu %></div>

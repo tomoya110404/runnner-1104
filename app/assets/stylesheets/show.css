@@ -19,4 +19,9 @@
 .Goodbtn {
   display: flex;
   justify-content: flex-end;
+  margin: 50px 100px 50px 0;
+}
+
+div[data-check="true"] {
+  background: #585555;
 }
