@@ -19,9 +19,18 @@
 .Goodbtn {
   display: flex;
   justify-content: flex-end;
-  margin: 50px 100px 50px 0;
+  margin: 50px 200px 50px 0;
+}
+
+.goodbtn {
+  margin-left: 30px;
+  display: block;
 }
 
 div[data-check="true"] {
-  background: #585555;
+  color: red;
+}
+
+.heart-mark {
+  
 }
