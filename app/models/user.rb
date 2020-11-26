@@ -11,7 +11,8 @@ class User < ApplicationRecord
     validates :password
   end  
 
-  has_many :article
+  has_many :articles
   has_many :comments
-
+  has_many :meals
+  has_many :meals_comment
 end

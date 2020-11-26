@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../comment")
+require("../meal_comment")
 require("../index")
 
 
