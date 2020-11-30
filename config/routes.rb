@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  get 'articles/:id/checked', to: 'articles#checked'
-
   resources :meals do
     resources :meals_comments, only: [:create, :destroy]
   end  
+
+  resources :users, only: [:show]
 end
