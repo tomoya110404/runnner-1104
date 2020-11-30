@@ -4,15 +4,22 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-         
+  # バリデーション      
   with_options presence: true do
     validates :nickname
     validates :email
     validates :password
   end  
-
+  
+  # 運動管理記事
   has_many :articles
+  has_one_attached :image
   has_many :comments
+  has_many :favorite
+
+  # 食事記事
   has_many :meals
   has_many :meals_comment
+
+
 end

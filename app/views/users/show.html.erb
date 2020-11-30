@@ -1,0 +1,49 @@
+<div class="user-profile">
+  <div class="userprofile">
+    <div class="profileimage">
+      aaa
+    </div>
+    <div class="user-description">
+      <div class="user-name"><%= @user.nickname %></div>
+      <div class="user-email"><%= @user.email %></div>
+      <% if current_user.height %>
+        <div class="user-height"><%= @user.height %></div>
+      <% end %>  
+      <% if current_user.weight %>
+        <div class="user-height"><%= @user.weight %></div>
+      <% end %>
+    </div>
+  </div>  
+
+  <% if @article %>
+    <div class="favorites">
+      <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
+      <div class="favorite">
+        <%= render partial: "articles/article", collection: @article  %>
+      </div>
+    </div>  
+  <% else %>  
+    <div class="favorites">
+      <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
+      <div class="favorite">
+        記事を投稿しましょう！
+      </div>
+    </div>  
+  <% end %>  
+  
+  <% if @meals %>
+    <div class="favorites">
+      <div class="favorite-meal">・<%=@user.nickname%> Meals Logs・</div>
+      <div class="favorite">
+        <%= render partial: "meals/meal", collection: @meals %>
+      </div>
+    </div>
+  <% else %>  
+    <div class="favorites">
+      <div class="favorite-meal">・<%=@user.nickname%> Meals Logs・</div>
+      <div class="favorite">
+        記事を投稿しましょう！
+      </div>
+    </div>
+  <% end %>
+</div>

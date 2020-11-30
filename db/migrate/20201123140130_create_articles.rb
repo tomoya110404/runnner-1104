@@ -6,7 +6,8 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.text         :free_text
       t.text         :hapning     
       t.integer      :category_id,         null: false
-      t.references   :user,                null: false, foreign_key: true
+      t.boolean      :checked
+      t.references  :user,      foreign_key: true
       t.timestamps
     end
   end

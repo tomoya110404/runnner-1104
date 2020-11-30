@@ -2,9 +2,11 @@ class Article < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
 
-  belongs_to :user
+
   has_one_attached :image
-  has_many :comments
+  belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :favorite, dependent: :destroy
 
   with_options presence: true do
     validates :title

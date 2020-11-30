@@ -22,10 +22,13 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @favorite_new = Favorite.new
+    if user_signed_in?
+      @favorite = Favorite.find_by(user_id: current_user.id, article_id: @article.id)
+    end  
   end
 
   def edit
-  
   end
 
   def update
@@ -41,6 +44,18 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def checked
+    @article = Article.find(params[:id])
+    if @article.checked 
+      @article.update(checked: false)
+    else
+      @article.update(checked: true)
+    end
+
+    item = Article.find(params[:id])
+    render json: { article: item }
+  end
+
 
   private
 
@@ -49,6 +64,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :menu, :hapning, :free_text, :category_id, :image).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :menu, :hapning, :free_text, :category_id, :image ).merge(user_id: current_user.id)
   end
 end

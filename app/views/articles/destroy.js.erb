@@ -1,0 +1,1 @@
+$("#unfavorite_<%= @favorite.id %>").replaceWith("<%= escape_javascript(render 'favorites/favorite', { aricle: @article, favorite_new: @favorite_new }) %>")
