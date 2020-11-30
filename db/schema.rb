@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_064142) do
+ActiveRecord::Schema.define(version: 2020_11_27_032411) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 2020_11_26_064142) do
     t.index ["user_id"], name: "index_favorite_counts_on_user_id"
   end
 
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_favorites_on_article_id"
+    t.index ["user_id", "article_id"], name: "index_favorites_on_user_id_and_article_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "kondate", null: false
@@ -113,6 +123,8 @@ ActiveRecord::Schema.define(version: 2020_11_26_064142) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorite_counts", "articles"
   add_foreign_key "favorite_counts", "users"
+  add_foreign_key "favorites", "articles"
+  add_foreign_key "favorites", "users"
   add_foreign_key "meals", "users"
   add_foreign_key "meals_comments", "meals"
   add_foreign_key "meals_comments", "users"

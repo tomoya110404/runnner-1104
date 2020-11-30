@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "runners#index"
   resources :articles do
-    resource :favorite_counts, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
 
