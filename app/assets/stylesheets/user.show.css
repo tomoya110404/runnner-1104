@@ -1,0 +1,14 @@
+.user-profile {
+  margin: 60px;
+
+}
+
+.userprofile {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 150px;
+}
+
+.user-description {
+
+}
