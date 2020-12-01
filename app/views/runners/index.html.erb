@@ -1,11 +1,19 @@
 <div class="main">
   <%= image_tag 'photo-1513593771513-7b58b6c4af38.jpeg', class: "main-image"%>
-  <h1>Runners High(仮)</h1>
+  <h1>Runners High</h1>
   <div class="concept">
-    <div class="concept-title">コンセプト</div>
+    <div class="concept-title">・コンセプト・</div>
     <div class="concept-introduction">
-     アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介アプリの紹介
+     「走る」ということは人が太古の時代からいかなる時も必要な能力でした。
+      今現在では走るということは生きていく上で必要なことではありません。
+      そんなの悲しくありませんか？このサイトには走ることが生きること、生きがいだと思える様な人がたくさんいます。
+      「走る」を共有して心の底から人生を楽しみましょう。
     </div>
+    <div class="concept-images">
+      <%= image_tag 'photo-1557937719-083aaf9d60cc.jpeg', size: '300x300', class: "concept-image" %>
+      <%= image_tag 'photo-1486218119243-13883505764c.jpeg', size: '300x300', class: "concept-image"%>
+      <%= image_tag 'photo-1517488629431-6427e0ee1e5f.jpeg', size: '300x300', class: "concept-image"%>
+    </div>  
   </div>  
   <div class="favorites">
     <div class="favorite-article">・Good Logs・</div>
@@ -18,6 +26,9 @@
       <%= render partial: "meals/meal", collection: @meals %>
     </div>
   </div>
+  <div class="footer">
+      <p class="copyright">Copyright © Runners High All rights reserved.</p>
+  </div>  
 </div>
 
 

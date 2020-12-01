@@ -28,6 +28,7 @@ function comment() {
             <p class="talk-text" >${item.comment}</p>
           </div>  
           <div class="lower-message-delete", id="pull-down">
+            削除する
           </div>  
         </div>  
       </li>  `;

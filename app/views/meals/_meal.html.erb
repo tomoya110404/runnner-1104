@@ -3,6 +3,13 @@
   <div class="card-body">
     <h5 class="card-title"><%= meal.name %></h5>
     <p class="card-text"><%= meal.kondate %></p>
-    <%= link_to "記事を見る", meal_path(meal.id), class: "btn btn-primary" %>
+    <div class="favocount">
+      <div class="iine">いいね数</div>
+      <div class="favo-count"></div>
+    </div>
+    <div class="card-bottom">
+      <%= link_to "記事を見る", meal_path(meal.id), class: "btn btn-primary" %>
+      <%= link_to "作成者#{meal.user.nickname}", user_path(meal.user.id), class: "btn btn-right" %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,22 @@
+.newform {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.field {
+  color: #111111;
+  margin: 30px 0;
+}
+
+.form_label {
+  display: flex;
+  justify-content: center;
+}
+
+.form__text {
+  size: 100px;
+  width: 400px;
+  border-radius:30px;
+  outline: none;
+}

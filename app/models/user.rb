@@ -21,5 +21,7 @@ class User < ApplicationRecord
   has_many :meals
   has_many :meals_comment
 
+  #画像添付
+
 
 end

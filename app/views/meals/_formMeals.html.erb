@@ -1,37 +1,37 @@
 <%= form_with(model: meal, local: true) do |f|%>
   <div class="field">
-    <%= f.label :name, "タイトル" %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name, "タイトル", class: "form_label" %><br />
+    <%= f.text_field :name , class: "form__text"%>
   </div>
 
   <div class="field">
-    <%= f.label :image, "料理イメージ" %><br />
+    <%= f.label :image, "料理イメージ", class: "form_label" %><br />
     <%= f.file_field :image %>
   </div>
 
 
   <div class="field">
-    <%= f.label :kondate, "今日のメニュー" %><br />
+    <%= f.label :kondate, "今日のメニュー", class: "form_label" %><br />
     <%= f.text_area :kondate, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :recipe, "レシピ" %><br />
+    <%= f.label :recipe, "レシピ", class: "form_label" %><br />
     <%= f.text_area :recipe, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :recipe2, "レシピ２" %><br />
+    <%= f.label :recipe2, "レシピ２", class: "form_label" %><br />
     <%= f.text_area :recipe2, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :recipe3, "レシピ３" %><br />
+    <%= f.label :recipe3, "レシピ３", class: "form_label" %><br />
     <%= f.text_area :recipe3, class: :form__text %>
   </div>
 
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "保存する", class: "btn btn-primary"  %>
   </div>
 <% end %>

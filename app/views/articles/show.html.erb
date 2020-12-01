@@ -2,39 +2,43 @@
   <div class="show-title">
      <div class="show-title-content"><%= @article.title %></div>
      <div class="maybypulldown">
-       <%= link_to "削除", article_path(@article.id), method: :delete %>
-       <%= link_to "編集", edit_article_path %>
+       <% if user_signed_in? && current_user.id == @article.user.id %>
+        <%= link_to "編集", edit_article_path, class: "show-edit"%>
+        <%= link_to "削除", article_path(@article.id), method: :delete, class: "show-delete" %>
+      <% end %>  
      </div>  
   </div>
-  <%= image_tag(@article.image, class: "show-image") %>
-  
+
+  <div class="show-description">
+    <%= image_tag(@article.image, size: "600x400", class: "show-image") %>
+    <div class="show-content">
+      <div class="category-zone">カテゴリー：<%= @article.category.name %></div>
+      <div class="menu-form">メニュー：<%= @article.menu %></div>
+      <div class="free-text">振り返り：<%= @article.free_text %></div>
+      <div class="hapning">自由欄：<%= @article.hapning %></div>
+    </div>
+  </div>
+
     <div class="Goodbtn">
       <% if user_signed_in? %>
           <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
       <% end %>  
         <div class="Good-count">
-          いいね
         </div>  
     </div>
 
-  <div class="show-content">
-      <div class="category-zone"><%= @article.category.name %></div>
-      <div class="menu-form"><%= @article.menu %></div>
-      <div class="free-text"><%= @article.free_text %></div>
-      <div class="hapning"><%= @article.hapning %></div>
-  </div>
 
 
-  <div class="comment-zone">
-    <% if user_signed_in?%>
-      <h1>コメント一覧</h1>
+  <% if user_signed_in?%>
+    <div class="comment-zone">
+      <p>・コメント一覧・</p>
       <%= form_with(model: [@article, @comment], local:true, id: "form", class: "form")  do |form| %>
         <%= form.text_field :comment,  id: "text", placeholder: "コメントする", class: "comment-text"%>
-        <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "comment-btn" %>
+        <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "btn btn-primary" %>
       <% end %> 
 
-      <ul class="talk", id="list">
-        <% if @comments %>
+     <% if @comments %>
+        <ul class="talk", id="list">
           <% @comments.each do |comment| %>
             <% if comment.user.id == current_user.id %>
               <li class="talk-Rtxt", id="talk-hukidashi-left">
@@ -59,12 +63,18 @@
               </li>
             <% end %>  
           <% end %>
-        <% end %>  
-      </ul>
-    <% else %>
-    ログインしてコメントを投稿しよう！
+        </ul>
+     <% end %>  
+   </div>
+ <% else %>
+   <div class="notlogin">
+    <%= link_to "ログイン", user_session_path %>してコメントを投稿しよう！
+   </div>  
+ <% end %>  
 
-    <% end %>  
-  </div>
+  <div class="footer">
+      <p class="copyright">Copyright © Runners High All rights reserved.</p>
+  </div>  
+
 </div>
 
