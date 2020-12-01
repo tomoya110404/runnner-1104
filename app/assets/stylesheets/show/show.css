@@ -1,0 +1,122 @@
+.show-layout {
+  width: 100vw;
+  margin: 0 auto;
+  margin-top: 30px;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.show-title {
+  display: flex;
+  justify-content: center;
+}
+
+.show-title-content {
+  font-size: 40px;
+}
+
+
+.show-description {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-image {
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.show-edit {
+  color: #9ce191;
+  margin: 30px;
+}
+
+.show-delete {
+  color: red;
+}
+
+.Goodbtn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px 200px 50px 0;
+}
+
+.goodbtn {
+  margin-left: 30px;
+  display: block;
+}
+
+.show-content {
+  margin-top: 100px;
+  border: solid #5989cf;
+  padding: 30px 50px 30px 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+  width: 100%;
+}
+
+.category-zone {
+  margin-top: 50px;
+}
+
+.menu-form {
+  word-break : break-all;
+  margin-top: 50px;
+}
+
+.free-text {
+  margin-top: 50px;
+}
+
+.hapning {
+  margin-top: 50px;
+}
+
+div[data-check="true"] {
+  color: red;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-zone {
+  margin-left: 100px;
+}
+
+ .talk {
+  margin-bottom: 40px;
+  margin-top: 50px;
+  height: 70vh;
+  width: 40vw;
+  overflow: scroll;
+  background-color: #fff;
+  border: solid  #111111;
+  border-radius: 5px;
+  }
+
+.talk-Rtxt {
+  list-style: none;
+  margin: 50px 50px 50px 100px;
+  padding: 1.2em;
+  border: 3px solid #ebffe7;
+  background-color: #ebffe7;
+  border-radius: 5px;
+}
+.talk-Ltxt {
+  list-style: none;
+  color: #444;
+  padding: 1.2em;
+  border: 3px solid #9ce191;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 50px 100px 50px 0;
+}
+
+.notlogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+.articles {
+  margin: 50px 30px;
+  height: 100vh;
+}
+
+.article-mi {
+  margin: 50px;
+}
+
+.article {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+.article-midashi {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.iine {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.favo-count {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card {
+  margin: 50px 0;
+}

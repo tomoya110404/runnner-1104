@@ -2,55 +2,69 @@
   <div class="show-title">
      <div class="show-title-content"><%= @meal.name %></div>
      <div class="maybypulldown">
-       <%= link_to "削除", "#", method: :delete %>
-       <%= link_to "編集", "#" %>
+       <% if user_signed_in? && current_user.id == @meal.user.id %>
+        <%= link_to "編集", "#" , class:"show-edit"%>
+        <%= link_to "削除", "#", method: :delete, class:"show-delete" %>
+       <% end %>
      </div>  
   </div>
-  <%= image_tag(@meal.image, class: "show-image") %>
+
+  <div class="show-description">
+    <%= image_tag(@meal.image, size: "660x400", class: "show-image") %>
+    <div class="show-content">
+        <div class="category-zone">献立：<%= @meal.kondate %></div>
+        <div class="menu-form">レシピ：<%= @meal.recipe %></div>
+        <div class="free-text">レシピ２：<%= @meal.recipe2 %></div>
+        <div class="hapning">レシピ３：<%= @meal.recipe3 %></div>
+    </div> 
+  </div>  
   <div class="Goodbtn">btn</div> 
-  <div class="show-content">
-      <div class="category-zone"><%= @meal.kondate %></div>
-      <div class="menu-form"><%= @meal.recipe %></div>
-      <div class="free-text"><%= @meal.recipe2 %></div>
-      <div class="hapning"><%= @meal.recipe3 %></div>
-  </div>
 
-  <div class="comment-zone">
-    <h1>コメント一覧</h1>
-    <%= form_with(model: [@meal, @meals_comment], local:true, id: "m_form", class: "form")  do |form| %>
-      <%= form.text_field :meal_comment,  id: "m_text", placeholder: "コメントする", class: "comment-text"%>
-      <%= form.submit '投稿する' , id: "m_submit", data_id: @meal.id, class: "comment-btn" %>
-    <% end %> 
+   <% if user_signed_in? %>
+      <div class="comment-zone">
+        <p>・コメント一覧・</p>
+        <%= form_with(model: [@meal, @meals_comment], local:true, id: "m_form", class: "form")  do |form| %>
+          <%= form.text_field :meal_comment,  id: "m_text", placeholder: "コメントする", class: "comment-text"%>
+          <%= form.submit '投稿する' , id: "m_submit", data_id: @meal.id, class: "btn btn-primary" %>
+        <% end %> 
 
-    <ul class="talk", id="m_list">
-      <% if @meals_comments %>
-        <% @meals_comments.each do |comment| %>
-          <% if comment.user.id == current_user.id %>
-            <li class="talk-Rtxt", id="talk-hukidashi-left">
-                <div>
-                  <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
-                </div>
-                <div class="lower-messages">
-                  <div class="lower-message-text">
-                    <p class="talk-text" ><%= comment.meal_comment %></p>
+        <ul class="talk", id="m_list">
+          <% if @meals_comments %>
+            <% @meals_comments.each do |comment| %>
+              <% if comment.user.id == current_user.id %>
+                <li class="talk-Rtxt", id="talk-hukidashi-left">
+                    <div>
+                      <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
+                    </div>
+                    <div class="lower-messages">
+                      <div class="lower-message-text">
+                        <p class="talk-text" ><%= comment.meal_comment %></p>
+                      </div>  
+                      <div class="lower-message-delete", id="pull-down">
+                        <%= link_to "削除する", meal_meals_comment_path(comment.id), method: :delete %>
+                      </div>  
+                    </div>  
+                </li>  
+              <% else %>  
+                <li class="talk-Ltxt">
+                  <div>
+                    <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
+                    <p class="talk-text"><%= comment.meal_comment %></p>
                   </div>  
-                  <div class="lower-message-delete", id="pull-down">
-                    <%= link_to "削除する", meal_meals_comment_path(comment.id), method: :delete %>
-                  </div>  
-                </div>  
-            </li>  
-          <% else %>  
-            <li class="talk-Ltxt">
-              <div>
-                <p class="talk-name">@<%= comment.user.nickname %>@さん</p>
-                <p class="talk-text"><%= comment.meal_comment %></p>
-              </div>  
-            </li>
+                </li>
+              <% end %>  
+            <% end %>
           <% end %>  
-        <% end %>
-      <% end %>  
-    </ul>
-  </div>
+        </ul>
+      </div>
+   <% else %>
+    <div class="notlogin">
+      <%= link_to "ログイン", user_session_path %>してコメントを投稿しよう！
+    </div>     
+   <% end %>
+    <div class="footer">
+        <p class="copyright">Copyright © Runners High All rights reserved.</p>
+    </div>  
 </div>
 
 

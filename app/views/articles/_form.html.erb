@@ -1,34 +1,37 @@
 <%= form_with(model: article, local: true) do |f|%>
+
   <div class="field">
-    <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title, "タイトル", class: "form_label" %><br />
+    <%= f.text_field :title, class: "form__text" %>
   </div>
 
   <div class="field">
-    <%= f.label :menu, "今日のメニュー" %><br />
-    <%= f.text_area :menu, class: :form__text %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hapning, "振り返り" %><br />
-    <%= f.text_area :hapning, class: :form__text %>
-  </div>
-
-  <div class="field">
-    <%= f.label :free_text, "自由枠" %><br />
-    <%= f.text_area :free_text, class: :form__text %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image, "道中での発見" %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="field">
+    <%= f.label :category_id, "カテゴリー", class: "form_label" %><br />
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
   </div>
 
+
+  <div class="field">
+    <%= f.label :menu, "今日のメニュー", class: "form_label" %><br />
+    <%= f.text_area :menu, class: "form__text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hapning, "振り返り", class: "form_label" %><br />
+    <%= f.text_area :hapning, class: "form__text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :free_text, "自由枠", class: "form_label" %><br />
+    <%= f.text_area :free_text, class: "form__text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "活動風景", class: "form_label" %><br />
+    <%= f.file_field :image %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "保存する", class: "btn btn-primary"  %>
   </div>
 <% end %>

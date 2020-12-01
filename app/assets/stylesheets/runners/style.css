@@ -22,23 +22,37 @@
   font-size: 30px;
 }
 
+.Myname {
+  margin-right: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
 .logout {
   margin-right: 30px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .login {
-  margin-right: 10px;
+  margin-right: 30px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .resistration {
   margin-right: 30px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .three-line {
   margin-right: 10px;
 }
+
 .header-pulldown {
   position: relative;
+  color: #fff;
 }
 
 .hidden {
@@ -50,12 +64,17 @@
   height: 300px;
   position: absolute;
   right: 0.5px;
-  top: 40px;
+  top: 31px;
   background-color: black;
   opacity: 0.8;
 }
 
 .show-list {
+  color: #fff;
+  margin: 20px 0 0 30px;
+}
+.list-content {
+  color: #fff;
   margin: 20px 0 0 30px;
 }
 
@@ -63,6 +82,8 @@
   height: 600px;
   margin-top: 50px;
 }
+
+
 
  /* メイン画面 */
 
@@ -90,7 +111,8 @@
  }
 
  .concept {
-   height: 350px;
+   height: 700px;
+   width: 100vh;
    margin: 100px 300px;
  }
 
@@ -98,6 +120,15 @@
    display: flex;
    justify-content: center;
    margin-bottom: 50px;
+ }
+
+ .concept-images {
+  display: flex;
+  margin: 30px;
+ }
+
+ .concept-image {
+   margin: 0 30px;
  }
 
  .favorites {
@@ -113,6 +144,8 @@
  .favorite {
    display: flex;
    justify-content: space-around;
+   flex-wrap: wrap;
+   margin: 50px;
  }
 
  .favorite-meal {
@@ -135,8 +168,8 @@
   background-color: black;
   padding: 10px 0;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  bottom: 100;
+  margin-top: 500px;
 }
 .copyright {
   text-align: center;
