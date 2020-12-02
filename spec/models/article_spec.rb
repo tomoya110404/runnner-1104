@@ -37,6 +37,5 @@ RSpec.describe Article, type: :model do
         expect(@article.errors.full_messages).to include("Category must be other than 1")
       end
     end
-
   end
 end

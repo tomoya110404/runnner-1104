@@ -10,7 +10,9 @@
   </div>
 
   <div class="show-description">
-    <%= image_tag(@article.image, size: "600x400", class: "show-image") %>
+    <% if @article.image.present? %>
+      <%= image_tag(@article.image, size: "600x400", class: "show-image") %>
+    <% end %>  
     <div class="show-content">
       <div class="category-zone">カテゴリー：<%= @article.category.name %></div>
       <div class="menu-form">メニュー：<%= @article.menu %></div>
