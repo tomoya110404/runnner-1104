@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :meals do
+    resources :meal_favorites, only: [:create, :destroy]
     resources :meals_comments, only: [:create, :destroy]
   end  
 

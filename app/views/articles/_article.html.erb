@@ -5,7 +5,7 @@
     <p class="card-text"><%= article.menu %></p>
     <div class="favocount">
       <div class="iine">いいね数</div>
-      <div class="favo-count"><%= article.favorite.count %></div>
+      <div class="favo-count"><%= article.favorites.count %></div>
     </div>
     <div class="card-bottom">
       <%= link_to "記事を見る", article_path(article.id), class: "btn btn-primary" %>

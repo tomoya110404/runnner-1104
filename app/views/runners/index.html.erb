@@ -4,10 +4,8 @@
   <div class="concept">
     <div class="concept-title">・コンセプト・</div>
     <div class="concept-introduction">
-     「走る」ということは人が太古の時代からいかなる時も必要な能力でした。
-      今現在では走るということは生きていく上で必要なことではありません。
-      そんなの悲しくありませんか？このサイトには走ることが生きること、生きがいだと思える様な人がたくさんいます。
-      「走る」を共有して心の底から人生を楽しみましょう。
+       ランナーズハイ（runner's high）とは、継続的な運動によって引き起こされる一時的な多幸感であり、喜び、深い満足感、高揚感、ウェルビーイングといったポジティブ感情を経験する感情的状態です。
+      当サイトにはランニングに関わるあらゆる情報が集まってきます。「走る」を日常的な活動にして、人生に幸せをもたらしましょう。
     </div>
     <div class="concept-images">
       <%= image_tag 'photo-1557937719-083aaf9d60cc.jpeg', size: '300x300', class: "concept-image" %>
@@ -18,12 +16,47 @@
   <div class="favorites">
     <div class="favorite-article">・Good Logs・</div>
     <div class="favorite">
-      <%= render partial: "articles/article", collection: @articles  %>
+      <% @b_articles.each do |article| %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag( article.image, size: '100x100', class: "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text"><%= article.menu %></p>
+            <div class="favocount">
+              <div class="iine">いいね数</div>
+
+              <div class="favo-count"><%= article.favorites.count %></div>
+            </div>
+            <div class="card-bottom">
+              <%= link_to "記事を見る", article_path(article.id), class: "btn btn-primary" %>
+              <%= link_to "作成者#{article.user.nickname}", user_path(article.user.id), class: "btn btn-right" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%# <%= render partial: "articles/best_favorite", local: { b_article: @b_articles } %> 
     </div>
     
     <div class="favorite-meal">・Good Meals・</div>
     <div class="favorite">
-      <%= render partial: "meals/meal", collection: @meals %>
+      <% @b_meals.each do |meal| %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag(meal.image, class: "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= meal.name %></h5>
+            <p class="card-text"><%= meal.kondate %></p>
+            <div class="favocount">
+              <div class="iine">いいね数</div>
+              <div class="favo-count"><%= meal.meal_favorites.count %></div>
+            </div>
+            <div class="card-bottom">
+              <%= link_to "記事を見る", meal_path(meal.id), class: "btn btn-primary" %>
+              <%= link_to "作成者#{meal.user.nickname}", user_path(meal.user.id), class: "btn btn-right" %>
+            </div>
+          </div>
+        </div>
+        <%# <%= render partial: "meals/meal", collection: @meals %> 
+      <% end %>
     </div>
   </div>
   <div class="footer">

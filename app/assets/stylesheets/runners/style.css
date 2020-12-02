@@ -17,7 +17,7 @@
 .top-icon {
   color: rgba(255, 255, 255, 0.6);
   font-family: fantasy;
-  margin-right: 600px;
+  margin-right: 500px;
   margin-top: 2px;
   font-size: 30px;
 }
@@ -113,17 +113,22 @@
  .concept {
    height: 700px;
    width: 100vh;
-   margin: 100px 300px;
+   margin: 100px 330px;
  }
 
  .concept-title {
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
    margin-bottom: 50px;
+ }
+
+ .concept-introduction {
+   margin: 100px;
  }
 
  .concept-images {
   display: flex;
+  justify-content: space-around;
   margin: 30px;
  }
 
@@ -176,3 +181,28 @@
   color: #fff;
   font-size: 10px;
 }
+
+
+
+  /* メディアクエリ */
+
+ /* タブレット表示時 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__summary {
+    font-size: 16px;
+  }
+ }

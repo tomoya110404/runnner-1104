@@ -1,0 +1,3 @@
+<%= form_with(model: [@meal, @favorite_new], local:true, id: "form_mf", class: "form")  do |form| %>
+  <%= form.submit 'GOOD!' , id: "mfsubmit", data_id: @meal.id, class: "btn btn-primary" %>
+<% end %> 
