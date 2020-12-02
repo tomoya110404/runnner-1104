@@ -11,6 +11,7 @@ require("../comment")
 require("../meal_comment")
 require("../index")
 require("../favorites")
+require("../meal_favorite")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

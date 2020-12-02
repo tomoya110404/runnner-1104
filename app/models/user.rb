@@ -13,9 +13,9 @@ class User < ApplicationRecord
   
   # 運動管理記事
   has_many :articles
-  has_one_attached :image
   has_many :comments
-  has_many :favorite
+  has_many :favorites
+  has_many :meal_favorites
 
   # 食事記事
   has_many :meals

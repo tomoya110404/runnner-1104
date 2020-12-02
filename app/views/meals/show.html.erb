@@ -3,8 +3,8 @@
      <div class="show-title-content"><%= @meal.name %></div>
      <div class="maybypulldown">
        <% if user_signed_in? && current_user.id == @meal.user.id %>
-        <%= link_to "編集", "#" , class:"show-edit"%>
-        <%= link_to "削除", "#", method: :delete, class:"show-delete" %>
+        <%= link_to "編集", edit_meal_path, class:"show-edit"%>
+        <%= link_to "削除", meal_path(@meal.id), method: :delete, class:"show-delete" %>
        <% end %>
      </div>  
   </div>
@@ -18,7 +18,12 @@
         <div class="hapning">レシピ３：<%= @meal.recipe3 %></div>
     </div> 
   </div>  
-  <div class="Goodbtn">btn</div> 
+  
+  <div class="Goodbtn">
+      <% if user_signed_in? %>
+          <%= render partial: "meal_favorites/meal_favorite", local: { article: @meal, favorite_new: @favorite_new } %>
+      <% end %>  
+  </div> 
 
    <% if user_signed_in? %>
       <div class="comment-zone">
