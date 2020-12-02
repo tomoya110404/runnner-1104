@@ -1,6 +1,8 @@
 <div class="card" style="width: 18rem;">
   <% if article.image.present? %>
     <%= image_tag(article.image, size: '100x100', class: "card-img-top") %>
+  <% else %>  
+    <div class="card-img-top aaa">No Image</div>
   <% end %>  
   <div class="card-body">
     <h5 class="card-title"><%= article.title %></h5>

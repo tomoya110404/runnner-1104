@@ -1,5 +1,9 @@
 <div class="card" style="width: 18rem;">
-  <%= image_tag(meal.image, class: "card-img-top") %>
+  <% if meal.image.present? %>
+    <%= image_tag(meal.image,  class: "card-img-top") %>
+  <% else %>  
+    <div class="card-img-top">No Image</div>
+  <% end %>  
   <div class="card-body">
     <h5 class="card-title"><%= meal.name %></h5>
     <p class="card-text"><%= meal.kondate %></p>

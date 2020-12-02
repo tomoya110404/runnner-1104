@@ -10,7 +10,9 @@
   </div>
 
   <div class="show-description">
-    <%= image_tag(@meal.image, size: "660x400", class: "show-image") %>
+    <% if @meal.image.present? %>
+      <%= image_tag(@meal.image, size: "660x400", class: "show-image") %>
+    <% end %>  
     <div class="show-content">
         <div class="category-zone">献立：<%= @meal.kondate %></div>
         <div class="menu-form">レシピ：<%= @meal.recipe %></div>
