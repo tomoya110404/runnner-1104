@@ -30,7 +30,7 @@ class MealsController < ApplicationController
   end
 
   def update
-    if @meal.update(meal_params)
+    if @meal.update(meals_params)
       redirect_to meal_path
     else  
       render :edit

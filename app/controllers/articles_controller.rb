@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    unless user_signed_in? && curent_user.id == @meal.user.id
+    unless user_signed_in? && current_user.id == @article.user.id
       redirect_back(fallback_location: meal_path(@meal.id))
     end  
   end
