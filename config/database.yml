@@ -16,6 +16,7 @@ default: &default
   username: root
   password: Tomoya&1104
   socket: /tmp/mysql.sock
+  
 
 development:
   <<: *default
@@ -50,5 +51,6 @@ test:
 production:
   <<: *default
   database: runnner_1104_production
-  username: runnner_1104
-  password: <%= ENV['RUNNNER_1104_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
