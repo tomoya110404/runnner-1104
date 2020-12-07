@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :meals_comments, only: [:create, :destroy]
   end  
 
-  resources :users, only: [:show]
+  resources :users, only: [:edit, :show, :update]
 end

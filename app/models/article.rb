@@ -2,10 +2,10 @@ class Article < ApplicationRecord
   
   # アクティブハッシュ
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
+  belongs_to :category, dependent: :destroy
 
   # 画像投稿
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
   # アソシエーション
   belongs_to :user

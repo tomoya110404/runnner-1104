@@ -4,6 +4,17 @@
 
 }
 
+.Goal {
+  display: flex;
+  justify-content: center;
+}
+
+.goal-form {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 150px 0;
+}
+
 .userprofile {
   display: flex;
   justify-content: space-around;

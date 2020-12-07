@@ -34,7 +34,7 @@
   <% if user_signed_in?%>
     <div class="comment-zone">
       <p>・コメント一覧・</p>
-      <%= form_with(model: [@article, @comment], local:true, id: "form", class: "form")  do |form| %>
+      <%= form_with(model: [@article, @comment], local: true, id: "form", class: "form")  do |form| %>
         <%= form.text_field :comment,  id: "text", placeholder: "コメントする", class: "comment-text"%>
         <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "btn btn-primary" %>
       <% end %> 

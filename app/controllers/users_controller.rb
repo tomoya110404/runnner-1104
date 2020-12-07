@@ -5,6 +5,16 @@ class UsersController < ApplicationController
   def show
     @article = @user.articles
     @meal = @user.meals
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else  
+      render :show  
+    end
   end
 
   private
@@ -17,6 +27,10 @@ class UsersController < ApplicationController
     unless current_user.id == @user.id
       redirect_to root_path
     end  
+  end
+
+  def user_params
+    params.require(:user).peermit(:distance)
   end
 
 
