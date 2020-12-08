@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   root to: "runners#index"
   resources :articles do
     resource :favorites, only: [:create, :destroy]
@@ -11,5 +14,8 @@ Rails.application.routes.draw do
     resources :meals_comments, only: [:create, :destroy]
   end  
 
-  resources :users, only: [:edit, :show, :update]
+  resources :users, only: [:create, :edit, :show, :update]
+  get "users/:id/editsub", to:  "users#editsub"
+  patch "users/:id/updatesub", to: "users#updatesub"
+  
 end

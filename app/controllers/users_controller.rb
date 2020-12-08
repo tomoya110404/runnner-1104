@@ -1,21 +1,41 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show]
+  before_action :user_find, only: [:show, :editsub, :update, :updatesub]
   before_action :not_user, only: [:show]
 
   def show
     @article = @user.articles
     @meal = @user.meals
-    @user = User.find(params[:id])
+  end
+
+  def editsub
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user.id)
     else  
-      render :show  
+      render :show
     end
   end
+
+  def updatesub
+    @user_distance = @user.distance.to_i - user_params[:distance].to_i
+    if  @user_distance >= 0
+      if @user.update(distance: @user_distance)
+        if @user.distance == 0
+          redirect_to root_path
+        else
+          redirect_to user_path(@user.id)  
+        end
+      else 
+        redirect_to user_path(@user.id) 
+      end  
+    else  
+      flash.now[:alert] = '目標の数字を超えています。'
+      render :show
+    end  
+  end
+
 
   private
 
@@ -30,8 +50,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).peermit(:distance)
+    params.require(:user).permit(:distance)
   end
-
 
 end

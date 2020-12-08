@@ -20,14 +20,17 @@
       <div class="hapning">自由欄：<%= @article.hapning %></div>
     </div>
   </div>
+   
+      <div class="Goodbtn">
+        <% if user_signed_in? && current_user.id == @article.user.id %>
+          <% unless current_user.id == @article.user.id %>
+            <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
+          <% end %> 
+        <% end %>  
+          <div class="Good-count">
+          </div>  
+      </div>
 
-    <div class="Goodbtn">
-      <% if user_signed_in? %>
-          <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
-      <% end %>  
-        <div class="Good-count">
-        </div>  
-    </div>
 
 
 

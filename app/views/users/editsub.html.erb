@@ -1,0 +1,9 @@
+<%= form_with model: @user, local: true, class: "editsub-form" do |f| %>
+
+  <div class="field">
+    <%= f.label :height, "今月の目標", class: "form_label"%><br />
+    <%= f.text_field :distance, id: "distance-integer", class: "form__text" %>
+    <%= f.submit "保存する", class: "btn btn-primary"  %>
+  </div>  
+
+<% end %>  
