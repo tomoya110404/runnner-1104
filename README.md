@@ -18,3 +18,5 @@
 #アプリケーション内で使用している技術
 HTML, CSS, Ruby, Ruby on Rails, Javascript, Git, Github, Mysql, AWS, Docker, Docker-compose
 
+
+
