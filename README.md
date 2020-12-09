@@ -1,24 +1,20 @@
-# README
+#アプリケーションの概要
+世の中のランナーのための練習メニュー、食事メニューなど共有サイトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#アプリケーションの機能
+1.ユーザー管理機能
+2.ユーザー詳細機能(詳細、編集、削除)
+3.練習メニュー投稿機能
+4.食事メニュー投稿機能
+5.練習メニュー詳細機能(詳細、編集、削除)
+6.食事メニュー詳細機能(詳細、編集、削除)
+7.コメント機能(AJAX)
+8.お気に入り機能(AJAX)
+9.記事ランキング（BEST3表示)
+10.記事検索機能
+11.目標距離設定機能(最初に目標距離を設定し、随時走った距離を入力することで目標距離が0に近づいていきます
+12.)
 
-Things you may want to cover:
+#アプリケーション内で使用している技術
+HTML, CSS, Ruby, Ruby on Rails, Javascript, Git, Github, Mysql, AWS, Docker, Docker-compose
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
