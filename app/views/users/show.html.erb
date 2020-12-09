@@ -1,7 +1,8 @@
+<%# ユーザープロフィール %>
 <div class="user-profile">
   <div class="userprofile">
     <div class="profileimage">
-      aaa
+         <%= image_tag 'profile.jpeg', size: '350x300', class: "concept-image"%>
     </div>
     <div class="user-description">
       <div class="user-name"><%= @user.nickname %></div>
@@ -12,9 +13,27 @@
       <% if current_user.weight %>
         <div class="user-height"><%= @user.weight %></div>
       <% end %>
+      <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
     </div>
   </div>  
-
+  <%# 目標記入欄 %>
+  <div class="Goals">
+    <div class="Goal", id="distance-goal">
+      <% if @user.distance %>
+       <span class="monthnokori" >目標まで残りkm</span>
+       <span class="distance-point", id="goal", data=<%= @user.distance %>><%= @user.distance%></span>
+      <% end %>  
+    </div>
+    <div class="flash"><%= flash[:alert] %></div>
+    
+    <%= form_with model: @user, url: "/users/#{@user.id}/updatesub", local: true, class: "editsub-form" do |f| %>
+      <div class="field">
+        <%= f.text_field :distance, id: "distance-integer", placeholder: "今日の走行距離", class: "form__textgoals" %>
+        <%= f.submit "更新する", class: "btn btn-primary"  %>
+      </div>  
+    <% end %>  
+  </div>
+  <%# ユーザーが投稿した記事 %>
   <% if @article %>
     <div class="favorites">
       <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
@@ -46,7 +65,7 @@
       </div>
     </div>
   <% end %>
-
+  <%# フッター %>
   <div class="footer">
       <p class="copyright">Copyright © Runners High All rights reserved.</p>
   </div>  

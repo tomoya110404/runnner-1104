@@ -18,23 +18,27 @@
       <div class="menu-form">メニュー：<%= @article.menu %></div>
       <div class="free-text">振り返り：<%= @article.free_text %></div>
       <div class="hapning">自由欄：<%= @article.hapning %></div>
+      <div class="get-user-name">作成者：<%= @article.user.nickname %></div>
     </div>
   </div>
+   
+      <div class="Goodbtn">
+        <% if user_signed_in?  %>
+          <% unless current_user.id == @article.user.id %>
+            <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
+          <% end %> 
+        <% end %>  
+          <div class="Good-count">
+          </div>  
+      </div>
 
-    <div class="Goodbtn">
-      <% if user_signed_in? %>
-          <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
-      <% end %>  
-        <div class="Good-count">
-        </div>  
-    </div>
 
 
 
   <% if user_signed_in?%>
     <div class="comment-zone">
       <p>・コメント一覧・</p>
-      <%= form_with(model: [@article, @comment], local:true, id: "form", class: "form")  do |form| %>
+      <%= form_with(model: [@article, @comment], local: true, id: "form", class: "form")  do |form| %>
         <%= form.text_field :comment,  id: "text", placeholder: "コメントする", class: "comment-text"%>
         <%= form.submit '投稿する' , id: "submit", data_id: @article.id, class: "btn btn-primary" %>
       <% end %> 

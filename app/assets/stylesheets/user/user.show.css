@@ -4,13 +4,63 @@
 
 }
 
+.Goal {
+  display: flex;
+  justify-content: center;
+}
+
+.goal-form {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 150px 0;
+}
+
+.monthnokori {
+  
+}
+
+.distance-point {
+  font-size: 30px;
+  margin-left: 30px;;
+  align-items: center;
+}
+
 .userprofile {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 150px;
   margin-top: 60px;
 }
 
+.user-description {
+  margin-right: 50px;
+  padding-top: 50px;
+  position: relative;
+}
+
+.thismonth {
+  position: absolute;
+  bottom: 0;
+}
+
+.flash {
+  display: flex;
+  justify-content: center;
+}
+
 .meal-link {
   color: #111111;
+}
+
+.form__hidden {
+  dislay: none;
+}
+
+.editsub-form {
+  display: flex;
+  justify-content: center;
+}
+
+.form__textgoals {
+  width: 150px;
 }

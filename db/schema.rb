@@ -56,15 +56,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_131900) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "favorite_counts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "article_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_favorite_counts_on_article_id"
-    t.index ["user_id"], name: "index_favorite_counts_on_user_id"
-  end
-
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "article_id"
@@ -118,6 +109,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_131900) do
     t.string "encrypted_password", default: "", null: false
     t.string "height"
     t.string "weight"
+    t.integer "distance"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -131,8 +123,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_131900) do
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
-  add_foreign_key "favorite_counts", "articles"
-  add_foreign_key "favorite_counts", "users"
   add_foreign_key "favorites", "articles"
   add_foreign_key "favorites", "users"
   add_foreign_key "meal_favorites", "meals"
