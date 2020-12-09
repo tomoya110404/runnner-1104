@@ -20,20 +20,7 @@ class UsersController < ApplicationController
 
   def updatesub
     @user_distance = @user.distance.to_i - user_params[:distance].to_i
-    if  @user_distance >= 0
-      if @user.update(distance: @user_distance)
-        if @user.distance == 0
-          redirect_to root_path
-        else
-          redirect_to user_path(@user.id)  
-        end
-      else 
-        redirect_to user_path(@user.id) 
-      end  
-    else  
-      flash.now[:alert] = '目標の数字を超えています。'
-      render :show
-    end  
+    goal_calc(@user_distance)
   end
 
 
@@ -53,4 +40,21 @@ class UsersController < ApplicationController
     params.require(:user).permit(:distance)
   end
 
+  def goal_calc(today_distance)
+    if  today_distance >= 0
+      if @user.update(distance: today_distance)
+        if @user.distance == 0
+          redirect_to root_path
+        else
+          redirect_to user_path(@user.id)
+        end
+      else 
+        redirect_to user_path(@user.id)
+      end  
+    else  
+      flash.now[:alert] = '目標の数字を超えています。'
+      render :show
+    end  
+  end
+  
 end
