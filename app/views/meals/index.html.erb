@@ -1,5 +1,9 @@
 <div class="articles">
   <div class="article-mi">
+    <%= form_with(url: search_meals_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :kondate, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
     <div class="article-midashi">・Meals・</div>
     <div class="article_introduction">このページにはランナーたちの日々の食事が主にまとめられています！ダイエット食やトレーニング用の食事が多く含まれています！共有をして良い食生活を続けていきましょう！</div>
   </div>  

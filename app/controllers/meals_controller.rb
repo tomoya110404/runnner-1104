@@ -43,6 +43,10 @@ class MealsController < ApplicationController
     redirect_to meals_path
   end
 
+  def search
+    @meal = Meal.search(params[:kondate])
+  end
+
 
   private
 

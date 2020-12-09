@@ -23,7 +23,7 @@ class Article < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Article.where('text LIKE(?)', "%#{search}%")
+      Article.where('menu LIKE(?)', "%#{search}%")
     else
       Article.all.includes(:user)
     end
