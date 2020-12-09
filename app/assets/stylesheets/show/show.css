@@ -50,10 +50,17 @@
 .show-content {
   margin-top: 100px;
   border: solid #5989cf;
-  padding: 30px 50px 30px 50px;
+  padding: 0 50px 40px 50px;
   margin-right: 100px;
   margin-left: 100px;
   width: 100%;
+  position: relative;
+}
+
+.get-user-name {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
 }
 
 .category-zone {

@@ -18,11 +18,12 @@
       <div class="menu-form">メニュー：<%= @article.menu %></div>
       <div class="free-text">振り返り：<%= @article.free_text %></div>
       <div class="hapning">自由欄：<%= @article.hapning %></div>
+      <div class="get-user-name">作成者：<%= @article.user.nickname %></div>
     </div>
   </div>
    
       <div class="Goodbtn">
-        <% if user_signed_in? && current_user.id == @article.user.id %>
+        <% if user_signed_in?  %>
           <% unless current_user.id == @article.user.id %>
             <%= render partial: "favorites/favorite", local: { article: @article, favorite_new: @favorite_new } %>
           <% end %> 

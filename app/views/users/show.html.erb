@@ -1,3 +1,4 @@
+<%# ユーザープロフィール %>
 <div class="user-profile">
   <div class="userprofile">
     <div class="profileimage">
@@ -15,11 +16,11 @@
       <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
     </div>
   </div>  
-
+  <%# 目標記入欄 %>
   <div class="Goals">
     <div class="Goal", id="distance-goal">
       <% if @user.distance %>
-       <span class="monthnokori" >今月残りkm</span>
+       <span class="monthnokori" >目標まで残りkm</span>
        <span class="distance-point", id="goal", data=<%= @user.distance %>><%= @user.distance%></span>
       <% end %>  
     </div>
@@ -32,7 +33,7 @@
       </div>  
     <% end %>  
   </div>
-
+  <%# ユーザーが投稿した記事 %>
   <% if @article %>
     <div class="favorites">
       <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
@@ -64,7 +65,7 @@
       </div>
     </div>
   <% end %>
-
+  <%# フッター %>
   <div class="footer">
       <p class="copyright">Copyright © Runners High All rights reserved.</p>
   </div>  
