@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :not_article_user, only: [:edit]
   
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(:user)
   end  
 
   def new
@@ -43,6 +43,10 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to articles_path
+  end
+
+  def search
+    @article = Article.search(params[:menu])
   end
 
   private

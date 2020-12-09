@@ -21,5 +21,13 @@ class Article < ApplicationRecord
     validates :category_id, numericality: { other_than: 1 }
   end
 
+  def self.search(search)
+    if search != ""
+      Article.where('text LIKE(?)', "%#{search}%")
+    else
+      Article.all.includes(:user)
+    end
+  end
+
 
 end

@@ -1,5 +1,9 @@
   <div class="articles">
     <div class="article-mi">
+    <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
       <div class="article-midashi">・Articles・</div>
       <div class="article_introduction">このページでは様々な人の練習メニューやランナーとしての生活を日記として共有することが出来ます。気になった人や質問したい人がいたら記事にリンクしましょう！</div>
     </div>  
