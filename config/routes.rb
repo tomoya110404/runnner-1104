@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :meals do
     resources :meal_favorites, only: [:create, :destroy]
     resources :meals_comments, only: [:create, :destroy]
+    collection do
+      get "search"
+    end
   end  
 
   resources :users, only: [:create, :edit, :show, :update]
