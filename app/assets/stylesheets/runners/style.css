@@ -3,7 +3,7 @@
 
 .header {
   background-color: black;
-  width: 100%;
+  width: 100vw;
   height: 40px;
 }
 
@@ -112,17 +112,18 @@
 
  .concept {
    height: 700px;
-   width: 100vh;
    margin: 100px 330px;
  }
 
  .concept-title {
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
    margin-bottom: 50px;
  }
 
  .concept-introduction {
+  display: flex;
+  justify-content: center;
    margin: 100px;
  }
 
