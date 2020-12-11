@@ -49,12 +49,14 @@
 
 .show-content {
   margin-top: 100px;
-  border: solid #5989cf;
+  border: solid #99CCFF;
   padding: 0 50px 40px 50px;
   margin-right: 100px;
   margin-left: 100px;
   width: 100%;
+  background-color: #99CCFF;
   position: relative;
+  border-radius: 5px;
 }
 
 .get-user-name {
