@@ -4,7 +4,7 @@ class MealsController < ApplicationController
   before_action :not_meal_user, only: [:edit]
 
   def index
-    @meals = Meal.all
+    @meals = Meal.all.page(params[:page]).per(2)
   end
 
   def new

@@ -40,3 +40,8 @@
   align-items: center;
   padding: 50px;
 }
+
+.pagenation {
+  display: flex;
+  justify-content: center;
+}
