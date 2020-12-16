@@ -38,9 +38,18 @@
   position: relative;
 }
 
+.followbtn {
+  margin: 0 200px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .thismonth {
   position: absolute;
   bottom: 0;
+  color: black;
+  text-decoration: none;
 }
 
 .flash {

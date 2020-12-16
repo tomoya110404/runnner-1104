@@ -5,17 +5,37 @@
          <%= image_tag 'profile.jpeg', size: '350x300', class: "concept-image"%>
     </div>
     <div class="user-description">
-      <div class="user-name"><%= @user.nickname %></div>
-      <div class="user-email"><%= @user.email %></div>
-      <% if current_user.height %>
-        <div class="user-height"><%= @user.height %></div>
+      <div class="user-name">ニックネーム：<%= @user.nickname %></div>
+      <div class="user-email">EMAIL：<%= @user.email %></div>
+      <% if @user.height %>
+        <div class="user-height">身長：<%= @user.height %></div>
       <% end %>  
-      <% if current_user.weight %>
-        <div class="user-height"><%= @user.weight %></div>
+      <% if @user.weight %>
+        <div class="user-height">体重：<%= @user.weight %></div>
       <% end %>
-      <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
+
+      <%# フォロワー数 %>
+      <div class="follower">
+        <%= link_to followers_user_path(@user.id) do %>
+            <div style="color: black;">フォロワー<%= @user.followers.count %>人</div>
+        <% end %>
+      </div>
+      <div class="follow">
+          <%= link_to following_user_path(@user.id) do %>
+                    <div style="color: black;">フォロー<%= @user.following.count %>人</div>
+          <% end %>
+      </div>
+
+      <% if user_signed_in? %>
+        <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
+      <% end %>  
     </div>
   </div>  
+
+  <div class="followbtn">
+      <%= render "follow_form" %>
+  </div>
+
   <%# 目標記入欄 %>
   <div class="Goals">
     <div class="Goal", id="distance-goal">
@@ -25,12 +45,13 @@
       <% end %>  
     </div>
     <div class="flash"><%= flash[:alert] %></div>
-    
-    <%= form_with model: @user, url: "/users/#{@user.id}/updatesub", local: true, class: "editsub-form" do |f| %>
-      <div class="field">
-        <%= f.text_field :distance, id: "distance-integer", placeholder: "今日の走行距離", class: "form__textgoals" %>
-        <%= f.submit "更新する", class: "btn btn-primary"  %>
-      </div>  
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <%= form_with model: @user, url: "/users/#{@user.id}/updatesub", local: true, class: "editsub-form" do |f| %>
+        <div class="field">
+          <%= f.text_field :distance, id: "distance-integer", placeholder: "今日の走行距離", class: "form__textgoals" %>
+          <%= f.submit "更新する", class: "btn btn-primary"  %>
+        </div>  
+      <% end %>  
     <% end %>  
   </div>
   <%# ユーザーが投稿した記事 %>
@@ -45,7 +66,7 @@
     <div class="favorites">
       <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
       <div class="favorite">
-        <%=link_to "記事を投稿しましょう！", new_article_path, class: "meal-link" %>
+        <%= link_to "記事を投稿しましょう！", new_article_path, class: "meal-link" %>
       </div>
     </div>  
   <% end %>  
@@ -61,7 +82,9 @@
     <div class="favorites">
       <div class="favorite-meal">・<%=@user.nickname%> Meals Logs・</div>
       <div class="favorite">
-        <%=link_to "記事を投稿しましょう！", new_meal_path, class: "meal-link" %>
+        <% if user_signed_in? %>
+          <%=link_to "記事を投稿しましょう！", new_meal_path, class: "meal-link" %>
+        <% end %>  
       </div>
     </div>
   <% end %>

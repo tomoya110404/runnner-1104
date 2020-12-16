@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :user_find, only: [:show, :editsub, :update, :updatesub]
-  before_action :not_user, only: [:show]
+  before_action :user_find, only: [:show, :editsub, :update, :updatesub, :following, :followers]
+  before_action :not_user, only: [:update, :updatesub]
 
   def show
     @article = @user.articles
@@ -21,6 +21,16 @@ class UsersController < ApplicationController
   def updatesub
     @user_distance = @user.distance.to_i - user_params[:distance].to_i
     goal_calc(@user_distance)
+  end
+
+  def following
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @users = @user.followers
+    render 'show_follower'
   end
 
 
