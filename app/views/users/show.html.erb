@@ -2,33 +2,41 @@
 <div class="user-profile">
   <div class="userprofile">
     <div class="profileimage">
-         <%= image_tag 'profile.jpeg', size: '350x300', class: "concept-image"%>
+         <%= image_tag 'sampleicone.jpeg', size: '350x300', class: "concept-image"%>
     </div>
     <div class="user-description">
-      <div class="user-name">ニックネーム：<%= @user.nickname %></div>
-      <div class="user-email">EMAIL：<%= @user.email %></div>
-      <% if @user.height %>
-        <div class="user-height">身長：<%= @user.height %></div>
-      <% end %>  
-      <% if @user.weight %>
-        <div class="user-height">体重：<%= @user.weight %></div>
-      <% end %>
-
-      <%# フォロワー数 %>
-      <div class="follower">
-        <%= link_to followers_user_path(@user.id) do %>
-            <div style="color: black;">フォロワー<%= @user.followers.count %>人</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ニックネーム：<%= @user.nickname %></li>
+        <li class="list-group-item">EMAIL：<%= @user.email %></li>
+        <% if @user.height %>
+          <li class="list-group-item">身長：<%= @user.height %></li>
         <% end %>
-      </div>
-      <div class="follow">
-          <%= link_to following_user_path(@user.id) do %>
-                    <div style="color: black;">フォロー<%= @user.following.count %>人</div>
-          <% end %>
-      </div>
+        <% if @user.weight %>
+          <li class="list-group-item">体重：<%= @user.weight %></li>
+        <% end %>
 
-      <% if user_signed_in? %>
-        <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
-      <% end %>  
+        <%# フォロワー数 %>
+        <li class="list-group-item">      
+          <div class="follower">
+            <%= link_to followers_user_path(@user.id) do %>
+                <div style="color: black;">フォロワー<%= @user.followers.count %>人</div>
+            <% end %>
+          </div>
+       </li>
+        <li class="list-group-item">
+          <div class="follow">
+              <%= link_to following_user_path(@user.id) do %>
+                        <div style="color: black;">フォロー<%= @user.following.count %>人</div>
+              <% end %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <% if user_signed_in? %>
+            <%= link_to "今月の目標を設定する", "/users/#{@user.id}/editsub", class: "thismonth" %>
+          <% end %>  
+        </li>
+      </ul>
+
     </div>
   </div>  
 

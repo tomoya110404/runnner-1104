@@ -53,6 +53,9 @@
 .header-pulldown {
   position: relative;
   color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 1050px;
 }
 
 .hidden {
@@ -88,8 +91,13 @@
  /* メイン画面 */
 
 .main {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("https://publicdomainq.net/images/201711/18s/publicdomainq-0015656hnk.jpg");
+
 }
 
 .main h1 {
@@ -113,12 +121,17 @@
  .concept {
    height: 700px;
    margin: 100px 330px;
+   background-color: #f4f4f4;
  }
 
  .concept-title {
    display: flex;
    justify-content: center;
    margin-bottom: 50px;
+   padding: 1rem 2rem;
+   border-bottom: 3px solid #000;
+   background: #444444;
+   color: white;
  }
 
  .concept-introduction {
@@ -139,12 +152,17 @@
 
  .favorites {
    margin: 60px 100px;
+   background-color: #f4f4f4;
  }
 
  .favorite-article {
    display: flex;
    justify-content: center;
-   margin-bottom: 100px;
+   margin: 0 250px 100px 250px;
+   padding: 1rem 2rem;
+   border-bottom: 3px solid #000;
+   background: #444444;
+   color: white;
  }
 
  .favorite {
@@ -152,12 +170,17 @@
    justify-content: space-around;
    flex-wrap: wrap;
    margin: 50px;
+   background-color: #f4f4f4;
  }
 
  .favorite-meal {
-   margin: 100px 0;
+   margin: 100px 250px;
    display: flex;
    justify-content: space-around;
+   padding: 1rem 2rem;
+   border-bottom: 3px solid #000;
+   background: #444444;
+   color: white;
  }
  
  .card-img-top {
@@ -171,7 +194,7 @@
 /* フッター */
 
 .footer {
-  background-color: black;
+  background-color: #444444;
   padding: 10px 0;
   width: 100%;
   bottom: 100;
