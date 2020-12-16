@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :not_article_user, only: [:edit]
   
   def index
-    @articles = Article.all.includes(:user).page(params[:page]).per(2)
+    @articles = Article.all.includes(:user).page(params[:page]).per(6)
   end  
 
   def new
