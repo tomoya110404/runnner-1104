@@ -18,11 +18,11 @@
 10. 記事検索機能
 11. 目標距離設定機能(最初に目標距離を設定し、随時走った距離を入力することで目標距離が0に近づいていきます。)
 12. ページネーション機能
-
+13. ユーザーフォロー機能
 
 # アプリケーション内で使用している技術
 
-HTML, CSS, Ruby, Ruby on Rails, Javascript, Git, Github, Mysql, AWS, Docker, Docker-compose, Travis CI
+HTML, CSS, Ruby, Ruby on Rails, Javascript, Git, Github, Mysql, AWS(S3, EC2), Docker, Docker-compose, Travis CI(自動テスト)
 
 ## URL
 
@@ -37,15 +37,19 @@ http://54.95.121.28/
 
 - 新規投稿
 右上の新規登録ボタンから画面に遷移できます。
-https://gyazo.com/70ca39215aa575fad5533d279deef185
+![7054dcb3639a9bc8481dc1f968e2f122](https://user-images.githubusercontent.com/73089922/102447603-ab0b6700-4073-11eb-9801-8a8b55f4832a.gif)
+
 
 - 各機能遷移方法
 右上のタブをクリックすることで各機能のリンクが隠れています。
-https://gyazo.com/7f21287051846d3ce7b8e770f629f640
+![9ff2ec7bb2d100a52022eea0fc41b3ef](https://user-images.githubusercontent.com/73089922/102447686-db530580-4073-11eb-9ae8-34991d48323f.gif)
+
+
 
 - 記事投稿(Make Traning Menu, Make Meal Menu)
 入力欄に入力し記事を投稿してください。
-https://gyazo.com/1c904e82292120249b79ef1956ea9822
+![eef70d114e28d5ff8f7d3260c8d80251](https://user-images.githubusercontent.com/73089922/102446279-bdd06c80-4070-11eb-80e3-986bf4223ca5.gif)
+
 
 
 # 実装予定の機能
