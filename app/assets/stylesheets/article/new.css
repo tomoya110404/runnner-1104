@@ -60,3 +60,7 @@
   border-radius: 10px;
   padding: 0.5rem 1rem;
 }
+
+.now-loading {
+  padding: 100px;
+}

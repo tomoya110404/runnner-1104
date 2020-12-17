@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end  
 
-  resources :users, only: [:create, :edit, :show, :update] do
+  resources :users, only: [:new, :create, :edit, :show, :update] do
     member do
       get :following, :followers
     end
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   get "users/:id/editsub", to:  "users#editsub"
   patch "users/:id/updatesub", to: "users#updatesub"
+  get "users/:id/celebration", to: "users#celebration"
 
   resources :relationships, only: [:create, :destroy]
   

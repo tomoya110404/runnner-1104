@@ -25,13 +25,16 @@ class UsersController < ApplicationController
 
   def following
     @users = @user.following
-    render 'show_follow'
   end
 
   def followers
     @users = @user.followers
-    render 'show_follower'
   end
+
+  def new
+
+  end
+
 
 
   private
@@ -54,7 +57,7 @@ class UsersController < ApplicationController
     if  today_distance >= 0
       if @user.update(distance: today_distance)
         if @user.distance == 0
-          redirect_to root_path
+          redirect_to new_user_path
         else
           redirect_to user_path(@user.id)
         end

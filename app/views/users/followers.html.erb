@@ -1,0 +1,10 @@
+<div class="userset"> 
+  <div class="now-loading">現在作成中・・・</div> 
+  <div class="follower-all">
+        <% @users.each do |user|%>
+          <div class="follower-name"><%= link_to "#{user.nickname}", user_path(user.id), class: "followername" %></div>
+        
+          <span><% %>
+        <% end %>
+  </div>  
+</div>  

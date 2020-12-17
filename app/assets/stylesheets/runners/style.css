@@ -28,28 +28,6 @@
   text-decoration: none;
 }
 
-.logout {
-  margin-right: 30px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.login {
-  margin-right: 30px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.resistration {
-  margin-right: 30px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.three-line {
-  margin-right: 10px;
-}
-
 .header-pulldown {
   position: relative;
   color: #fff;
@@ -72,12 +50,14 @@
   top: 47px;
   background-color: black;
   opacity: 0.8;
+  color: white;
 }
 
-.show-list {
-  color: #fff;
-  margin: 20px 0 0 30px;
+.showlist {
+  color: white;
+  text-decoration: none;
 }
+
 .list-content {
   color: #fff;
   margin: 20px 0 0 30px;

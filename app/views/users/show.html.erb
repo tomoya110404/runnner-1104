@@ -36,13 +36,15 @@
           <% end %>  
         </li>
       </ul>
-
     </div>
   </div>  
 
   <div class="followbtn">
       <%= render "follow_form" %>
   </div>
+
+  
+
 
   <%# 目標記入欄 %>
   <div class="Goals">
@@ -70,6 +72,7 @@
         <%= render partial: "articles/article", collection: @article  %>
       </div>
     </div>  
+
   <% else %>  
     <div class="favorites">
       <div class="favorite-article">・<%=@user.nickname%> Training Logs・</div>
@@ -102,3 +105,4 @@
   </div>  
 
 </div>
+

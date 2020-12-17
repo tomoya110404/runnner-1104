@@ -8,4 +8,8 @@ class RelationshipsController < ApplicationController
     @user = User.find(params[:id])
     current_user.unfollow(@user)
   end
+
+  def taliking
+
+  end
 end
