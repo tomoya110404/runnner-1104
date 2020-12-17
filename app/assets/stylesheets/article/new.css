@@ -1,7 +1,23 @@
+.newformall {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("https://publicdomainq.net/images/201902/03s/publicdomainq-0031058zot.jpg");
+}
+
+.newformallmeal {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("https://publicdomainq.net/images/201902/23s/publicdomainq-0031747fzb.jpg");
+}
+
 .newform {
   display: flex;
   justify-content: center;
-  margin: 100px 0;
+  padding: 100px 0;
 }
 
 .field {
@@ -12,6 +28,7 @@
 .form_label {
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .form__text {

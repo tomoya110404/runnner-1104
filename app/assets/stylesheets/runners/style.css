@@ -55,7 +55,9 @@
   color: #fff;
   display: flex;
   justify-content: flex-end;
-  margin-left: 1050px;
+  margin-left: 1200px;
+  position: absolute
+
 }
 
 .hidden {
@@ -66,7 +68,7 @@
   width: 150px;
   height: 300px;
   position: absolute;
-  right: 0.5px;
+  right: 900px;
   top: 47px;
   background-color: black;
   opacity: 0.8;
@@ -96,7 +98,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url("https://publicdomainq.net/images/201711/18s/publicdomainq-0015656hnk.jpg");
+  background-color: #f4f4f4 ;
+  /* background-image: url("https://publicdomainq.net/images/201711/18s/publicdomainq-0015656hnk.jpg"); */
 
 }
 
@@ -122,6 +125,10 @@
    height: 700px;
    margin: 100px 330px;
    background-color: #f4f4f4;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   background-image: url("https://publicdomainq.net/images/201711/18s/publicdomainq-0015656hnk.jpg");
  }
 
  .concept-title {
@@ -153,6 +160,7 @@
  .favorites {
    margin: 60px 100px;
    background-color: #f4f4f4;
+
  }
 
  .favorite-article {
@@ -171,6 +179,22 @@
    flex-wrap: wrap;
    margin: 50px;
    background-color: #f4f4f4;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   background-image: url("http://gahag.net/img/201512/24s/gahag-0039659362-1.jpg");
+ }
+
+ .mealfavorite {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px;
+  background-color: #f4f4f4;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("https://imageslabo.com/wp-content/uploads/2019/08/1158_food_subuta_9568-1024x683.jpg");
  }
 
  .favorite-meal {

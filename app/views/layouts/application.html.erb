@@ -40,8 +40,16 @@
                   <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
                 </li>  
               <% end %>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"  id="lists" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                  </button>
+                  <ul class="dropdown-menu">
+                    ...
+                  </ul>
+                </div>
+
                <div class="header-pulldown">
-                <i class="fas fa-align-right fa-2x three-line", id="lists"></i>
                 <div class="show-lists hidden", id="pull_down">
                   <% if user_signed_in? %>
                     <div class="show-list"><%= link_to "My Page", user_path(current_user.id) %></div>

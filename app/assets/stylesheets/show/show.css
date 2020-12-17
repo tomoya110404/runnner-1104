@@ -25,6 +25,12 @@
 .show-title {
   display: flex;
   justify-content: center;
+  padding: 1rem 2rem;
+  margin: 0 300px;
+  border-bottom: 3px solid #000;
+  background: #444444;
+  color: white;
+  border-radius: 10px;
 }
 
 .show-title-content {
@@ -65,19 +71,22 @@
 
 .show-content {
   margin-top: 100px;
-  border: solid #99CCFF;
   padding: 0 50px 40px 50px;
   margin-right: 100px;
   margin-left: 100px;
   width: 100%;
   background-color: #99CCFF;
-  position: relative;
   border-radius: 5px;
+
+  border-bottom: 3px solid #000;
+  background: #444444;
+  color: white;
+  border-radius: 10px;
 }
 
 .get-user-name {
   position: absolute;
-  bottom: 0;
+  bottom: 17%;
   right: 10%;
 }
 
@@ -109,6 +118,7 @@ div[data-check="true"] {
 
 .comment-zone {
   margin-left: 100px;
+  color: white;
 }
 
  .talk {
@@ -120,6 +130,7 @@ div[data-check="true"] {
   background-color: #fff;
   border: solid  #111111;
   border-radius: 5px;
+  color: black;
   }
 
 .talk-Rtxt {
