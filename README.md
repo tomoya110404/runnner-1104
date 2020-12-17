@@ -1,5 +1,5 @@
 # Runners High
-![12fc872e93c07ed01b14ff6ffb0c1c60](https://user-images.githubusercontent.com/73089922/102198492-cbb5ae80-3f05-11eb-9c1b-025d17f4a5cc.jpeg)
+![c9ccc4e25cda290627d06ffb86ddabc2](https://user-images.githubusercontent.com/73089922/102445897-e73cc880-406f-11eb-918d-3228b3c2ba64.gif)
 
 # アプリケーションの概要
 ### 世の中のランナーのための練習メニュー、食事メニューなど共有サイトです。
