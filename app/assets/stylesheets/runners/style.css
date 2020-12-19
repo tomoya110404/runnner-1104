@@ -53,6 +53,11 @@
   color: white;
 }
 
+.show-list {
+  color: #fff;
+  margin: 10px 20px;
+}
+
 .showlist {
   color: white;
   text-decoration: none;

@@ -52,12 +52,12 @@
                <div class="header-pulldown">
                 <div class="show-lists hidden", id="pull_down">
                   <% if user_signed_in? %>
-                    <div class="show-list"><%= link_to "My Page", user_path(current_user.id) %></div>
+                    <div class="show-list"><%= link_to "My Page", user_path(current_user.id), class: "showlist" %></div>
                   <%end %>  
                 <div class="show-list"><%= link_to "Articles", articles_path, class: "showlist" %></div>
-                  <div class="show-list"><%= link_to "Meals", meals_path %></div>
-                  <div class="show-list"><%= link_to "Make Training Menu", new_article_path %></div>
-                  <div class="show-list"><%= link_to "Make Meal Menu", new_meal_path %></div>
+                  <div class="show-list"><%= link_to "Meals", meals_path, class: "showlist" %></div>
+                  <div class="show-list"><%= link_to "Make Training Menu", new_article_path, class: "showlist" %></div>
+                  <div class="show-list"><%= link_to "Make Meal Menu", new_meal_path, class: "showlist" %></div>
                 </div>
               </div> 
             </ul>
