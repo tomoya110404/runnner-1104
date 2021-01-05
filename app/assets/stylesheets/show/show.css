@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url("https://publicdomainq.net/images/201902/03s/publicdomainq-0031058zot.jpg");
+  background-color:  	#C0C0C0;
 }
 
 .show-layout-meal {
@@ -19,7 +19,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url("https://publicdomainq.net/images/201902/23s/publicdomainq-0031747fzb.jpg");
+  background-color:  	#C0C0C0;
+  /* background-image: url("https://publicdomainq.net/images/201902/23s/publicdomainq-0031747fzb.jpg"); */
 }
 
 .show-title {
@@ -116,9 +117,25 @@ div[data-check="true"] {
   justify-content: flex-end;
 }
 
+
 .comment-zone {
-  margin-left: 100px;
   color: white;
+}
+
+.commentflame {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.midashiflame {
+  display: flex;
+  justify-content: center;
+}
+
+.commentflame {
+  display: flex;
+  justify-content: center;
 }
 
  .talk {
@@ -131,6 +148,8 @@ div[data-check="true"] {
   border: solid  #111111;
   border-radius: 5px;
   color: black;
+  filter: drop-shadow(10px 10px 5px rgb(0, 0, 0));
+
   }
 
 .talk-Rtxt {
@@ -155,4 +174,8 @@ div[data-check="true"] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form {
+  filter: drop-shadow(10px 10px 5px rgb(0, 0, 0));
 }

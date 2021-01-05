@@ -1,10 +1,8 @@
 .user-profile {
   height: 100%;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("https://publicdomainq.net/images/201902/03s/publicdomainq-0031058zot.jpg");
+
+  background-color: #f4f4f4;
 }
 
 .Goal {
@@ -24,35 +22,43 @@
 
 .distance-point {
   font-size: 30px;
-  margin-left: 30px;;
+  margin-left: 30px;
   align-items: center;
 }
 
 .userprofile {
-  display: flex;
-  justify-content: center;
   margin-bottom: 150px;
   padding-top: 100px;
   
 }
 
 .profileimage {
-
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .user-description {
+  display: flex;
+  justify-content: center;
   margin-right: 50px;
   margin-left: 50px;
   padding-top: 0px;
   position: relative;
+
   
+}
+
+.list-group list-group-flush {
+  display: flex;
+  justify-content: center;
 }
 
 .followbtn {
   margin: 0 200px;
   margin-bottom: 100px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .kokokobtn {
