@@ -57,7 +57,9 @@
        <span class="distance-point", id="goal", data=<%= @user.distance %>><%= @user.distance%></span>
       <% end %>  
     </div>
+
     <div class="flash"><%= flash[:alert] %></div>
+    
     <% if user_signed_in? && @user.id == current_user.id %>
       <%= form_with model: @user, url: "/users/#{@user.id}/updatesub", local: true, class: "editsub-form" do |f| %>
         <div class="field">

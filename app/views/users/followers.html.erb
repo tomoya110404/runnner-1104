@@ -7,4 +7,26 @@
           <span><% %>
         <% end %>
   </div>  
+  <div id="practice">
+    <p>{{ message }}</p>
+      <input type="text" v-model:value="message">
+  
+    <p>
+        <input type="text" v-model="km">km
+    </p>
+    <p>
+        <input type="text" v-model="m">m
+    </p>
+    <p>
+        <input type="text" v-model="mm">mm
+    </p>
+  </div>
 </div>  
+
+  <div id="app">
+    
+    <button v-on:click="openModal">Click</button>
+    <open-modal v-show="showContent" v-on:from-child="closeModal">slotからモーダルウィンドウへ</open-modal>
+
+  </div>
+
