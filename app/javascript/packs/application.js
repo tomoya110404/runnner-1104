@@ -13,6 +13,7 @@ require("../meal_comment")
 require("../index")
 require("../favorites")
 require("../meal_favorite")
+require("../weather")
 // require("../distance")
 
 
